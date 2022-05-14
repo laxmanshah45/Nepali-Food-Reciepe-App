@@ -1,9 +1,3 @@
-//
-//  Food_AppUITests.swift
-//  Food AppUITests
-//
-//  Created by Laxman Shah on 5/8/22.
-//
 
 import XCTest
 

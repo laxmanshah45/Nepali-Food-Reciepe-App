@@ -3,7 +3,7 @@ import SwiftUI
 
 
     struct Search: View {
-        let recipes = ["Momo", "Samosa", "Saag", "Samosa", "ChanaMasala", "Panipuri", "Alo Gobi", "Puri","Tandori"]
+        let recipes = ["Momo", "Samosa", "Saag", "Samosa", "Chana Masala", "Panipuri", "Chiken tika", "Puri","Tandori","Roti"]
           
            @State var search = ""
            

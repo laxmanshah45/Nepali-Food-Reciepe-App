@@ -3,7 +3,10 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    @StateObject var favorites = FavorisView()
     @State var search = ""
+    
     var body: some View {
         
         NavigationView {
@@ -19,8 +22,9 @@ struct HomeView: View {
             }
         .navigationViewStyle(.stack)
         
-        
+        .environmentObject(favorites)
     }
+        
 }
 
 struct HomeView_Previews: PreviewProvider {

@@ -1,14 +1,10 @@
-//
-//  RecipeDetail.swift
-//  Food App
-//
-//  Created by Laxman Shah on 5/11/22.
-//
+
 
 import SwiftUI
 
 struct RecipeDetail: View {
     var recipe: Recipe
+    @EnvironmentObject var favorites: FavorisView
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false){
@@ -25,6 +21,7 @@ struct RecipeDetail: View {
                     .fontWeight(.bold)
                     .multilineTextAlignment(.center)
                     .padding(.top, 10)
+                    
                     
                     Text(recipe.headline)
                         .multilineTextAlignment(.leading)
@@ -45,17 +42,29 @@ struct RecipeDetail: View {
                         }
                     }
             }
+                    
                 Text("Instructions")
                         .font(.system(size: 25))
                         .fontWeight(.bold)
                         .padding(15)
                     Text(recipe.instructions)
             }
+                
+                Button(favorites.contains(recipe) ? "Remove From Favorites" : "Add to Favorites") {
+                    if favorites.contains(recipe){
+                        favorites.remove(recipe)
+                    }else{
+                        favorites.add(recipe)
+                    }
+                }
+                .buttonStyle(.borderedProminent)
+                .padding()
             }
           
             .padding()
             
         }
+        
         
     }
 }
@@ -63,5 +72,7 @@ struct RecipeDetail: View {
 struct RecipeDetail_Previews: PreviewProvider {
     static var previews: some View {
         RecipeDetail(recipe: Recipe.receipesData[0])
+            .environmentObject(FavorisView())
     }
+        
 }

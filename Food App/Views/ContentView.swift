@@ -4,6 +4,8 @@ import SwiftUI
 
 
 struct ContentView: View {
+    @EnvironmentObject var favorites: FavorisView
+    
     var body: some View {
         
         TabView{
@@ -20,8 +22,9 @@ struct ContentView: View {
                 .tabItem{
                     Label("Search", systemImage: "magnifyingglass")
                 }
-        }
+        }  
     }
+      
 }
 
 struct ContentView_Previews: PreviewProvider {

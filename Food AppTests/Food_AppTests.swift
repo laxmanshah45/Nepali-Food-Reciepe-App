@@ -1,9 +1,3 @@
-//
-//  Food_AppTests.swift
-//  Food AppTests
-//
-//  Created by Laxman Shah on 5/8/22.
-//
 
 import XCTest
 @testable import Food_App
